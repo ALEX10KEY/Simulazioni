@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="it.polito.tdp.babs.BabsController">
+   <top>
+      <Label text="Bike Sharing Bike Area" BorderPane.alignment="CENTER" />
+   </top>
+   <center>
+      <VBox spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane hgap="5.0" vgap="5.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" />
+                <ColumnConstraints hgrow="SOMETIMES" />
+                  <ColumnConstraints hgrow="SOMETIMES" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Partenza" />
+                  <Label text="Arrivo" GridPane.rowIndex="1" />
+                  <ComboBox fx:id="boxPartenza" prefWidth="200.0" GridPane.columnIndex="1" />
+                  <ComboBox fx:id="boxArrivo" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" onAction="#doTempoMedio" text="Tempo medio" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" onAction="#doDettaglio" text="Dettaglio" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Label text="Data" GridPane.rowIndex="2" />
+                  <DatePicker fx:id="pickData" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+            <TextArea fx:id="txtResult" editable="false" prefHeight="200.0" prefWidth="200.0" wrapText="true" />
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+</BorderPane>
